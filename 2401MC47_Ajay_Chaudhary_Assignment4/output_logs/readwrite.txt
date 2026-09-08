@@ -1,0 +1,46 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ readwrite
+ReadeReRare de0r  ade(rp i1d  (4p2i ()p:id  5dE 6N)T)ER: :d aEtNaT=E0  ENrTeERR  addaedtaar=s=t1a
+=00  rreadeeardsers==32
+
+ReRaRdeeard er0e a( p1i dde r 4()pid:2  EXIT5
+):  (EpXiIdT 
+6): EXIT
+Writer 0 (pid 7): ENTER data=0
+Writer 0 (pid 7): UPDATED data=1
+Writer 0 (pid 7): EXIT
+Writer 1 (pid 8): ENTER data=1
+Writer 1 (pid 8): UPDATED data=2
+Writer 1 (pid 8): EXIT
+ReaRdeeaRdr ee0ard e1 r( p i(2dp i 4d( 5))p::  EENNTERTid 6)E Rd: adtaa=2ta =r2e ardeeras =dEeNrTEsR=21
+ d
+ata=2 readers=3
+ReaRdeear d0e r(pi d1  (4):p iEdX I5T
+): EXIT
+Reader 2 (pid 6): EXIT
+Writer 0 (pid 7): ENTER data=2
+Writer 0 (pid 7): UPDATED data=3
+Writer 0 (pid 7): EXIT
+Writer 1 (pid 8): ENTER data=3
+Writer 1 (pid 8): UPDATED data=4
+Writer 1 (pid 8): EXIT
+ReRaedRaeerdeader  2r 0( p i(p1i d(dp  4)i6)d:: 5  EE)NNT:E RE TdNatTEaR= E4R  dradteaaad=e4r srt=a1=
+4e ardeadeerrss==23
+
+RReaedaedrR e1e ar( p0der i(pdi d 5 4): E)X2I T(
+pi:d  E6X)I:T 
+EXIT
+Writer 0 (pid 7): ENTER data=4
+Writer 0 (pid 7): UPDATED data=5
+Writer 0 (pid 7): EXIT
+Writer 1 (pid 8): ENTER data=5
+Writer 1 (pid 8): UPDATED data=6
+Writer 1 (pid 8): EXIT
+ReadWrite: final shared_data=6, readers=0, writers=0
+$ qemu-system-riscv64: terminating on signal 15 from pid 13343 (timeout)

@@ -1,0 +1,50 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ prodcons
+Producer: inserted 1
+Consumer: removed 1
+Producer: inserted 2
+Consumer: removed 2
+Producer: inserted 3
+Consumer: removed 3
+Producer: inserted 4
+Consumer: removed 4
+Producer: inserted 5
+Consumer: removed 5
+Producer: inserted 6
+Consumer: removed 6
+Producer: inserted 7
+Consumer: removed 7
+Producer: inserted 8
+Consumer: removed 8
+Producer: inserted 9
+Consumer: removed 9
+Producer: inserted 10
+Consumer: removed 10
+Producer: inserted 11
+Consumer: removed 11
+Producer: inserted 12
+Consumer: removed 12
+Producer: inserted 13
+Consumer: removed 13
+Producer: inserted 14
+Consumer: removed 14
+Producer: inserted 15
+Consumer: removed 15
+Producer: inserted 16
+Consumer: removed 16
+Producer: inserted 17
+Consumer: removed 17
+Producer: inserted 18
+Consumer: removed 18
+Producer: inserted 19
+Consumer: removed 19
+Producer: inserted 20
+Consumer: removed 20
+ProdCons: consumed 20 items, order check PASS
+$ qemu-system-riscv64: terminating on signal 15 from pid 13241 (timeout)

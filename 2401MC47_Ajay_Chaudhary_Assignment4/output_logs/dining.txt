@@ -1,0 +1,90 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 1 starting
+hart 2 starting
+init: starting sh
+$ dining
+PhiPlhoPsPohpihleoPsro i0l:op hTeHrsIoNhK IhNiplhGer  1:2 :TH(Ic ycNlTKHeI i1)
+INNKoGs o(IcNlGypcloeso p1 h()Ph
+iclyocslohpeheere r 01:) 
+H UrN GR43Y::  TH
+ITNHKIINPNKhIiNlGoGs  (ocycplhee(r  c10:) 
+ycElAeT I1N)G
+
+PPPhihlihiollossooPohpihloessrophpe h2e:orp he1 r:  3rHHUU NNG:GRRYY
+
+ 4P:H hUNiGlRoHsophYe
+UrN G2R:Y 
+EATING
+PhiPlhoisloophseorp h0e: rT H4I:N KEIANTGI N(Gc
+ycle 2)
+PhPiPlhoislophhielros o0po:s oHhUpNhGeeRrYr
+ 1 :2 :EAT ITNHGI
+NKING (cycle 2)
+PhiPlhoPisloopshhiero ph2e:r  l3H:UoN GERAYT
+IsoNpGh
+er 4: THINKING (cycle 2)
+PhPPhhiilloossooppihlerhe ro s0op:1 :E hATTeHIINNGK
+rI N4G:  (cHyUcNlGeR 2)
+Y
+PhilosopPhhielro P1h:i lHoUsNsooGpphhereRr Y 
+32::  TEHAITNIKNINGG
+ (cycle 2)
+PhiPlhilooPsshoopphheerr 0 :3i:  lToHsHIoUpNhNeKGIRNYG
+ r (4c:y EcAlTeI N3G
+)
+PhiPPlhohsioiplhoeslopherr o 10: :E AsHUTNIGNRoYp
+Gh
+er 2: THINKING (cycle 3)
+PhilPPhohsioiplhoelro s2s:o popHheUrh eNrG RY3
+4::  ETAHTIINNKIGN
+G (cycle 3)
+PhPiPhliolshooispohlpoheersor p h0e:1 E:A TTIHNIG
+NrK I4N:G  (cHyUcNlGeR Y3
+)
+PhilPPohhsiolpohseorp hi1e:r  l2o:H UEANsGTRIYN
+oGp
+her 3: THINKING (cycle 3)
+PhiPlhoisPohpihlelors o0: ToHsopher 3p:her 4:I NEKAITING N (cG
+ycHlUeN G4)R
+Y
+PhiloPshoiplPhohesro 0i:l phHeoUsrNG oRpYhe1
+: rE A2T: ITNHGI
+NKING (cycle 4)
+PhiPhlPosohipilhloseooprs h2e:r H UoNpGhRe3r Y4
+: :T EHAITNIKINNGG
+ (cycle 4)
+PPPhhiilhoilossoopphlheerro 1 :0 :T HEsAITINNoGp
+hKIeNrG ( c4y:cl eH U4)N
+GRY
+PhPiPlhoisloopshohpiherl e2:r o E1s:A HUTNIGNRGY
+
+opher 3: THINKING (cycle 4)
+PhPihilolsooPspohphheir e0l:o rT HsIopNhKeIrN 3G :(c4 :H UNyGcEAlTRING
+eY 
+5)
+PhiPlhoPishliolpohseors o0:o pHUpNhGeRrh e1rY 
+2::  EATTHIINNKINGG
+ (cycle 5)
+PPhhiiPllohsoosilpohsoeprohe p2hre :r 4H U3N:G REYA
+TI:N THINKIG
+NG (cycle 5)
+PhPPihhiillosooplshoeprh os0oe:r pE A1h:eT IrNG
+ T4H:I NHKINUG N(GcRyYc
+le 5)
+PPhPhhiilloisolpohseoro ps1her:  2oH:pU NEGARTYI
+heNrG 
+3: THINKING (cycle 5)
+PhPPhiilholsoosiolpphheeorsr  3:0:  HcooUmNpGlRepY
+thede r5  4c:y cElAeTsI
+NG
+PhPihlilosoospophheerr  1:2 :E AcTIoNGmp
+leted 5 cycles
+PhPilhosiolpohseorph e4r:  c3o:m pElAeTINtGed 5
+ cycles
+Philosopher 1: completed 5 cycles
+Philosopher 3: completed 5 cycles
+Dining: all philosophers completed=YES
+$ qemu-system-riscv64: terminating on signal 15 from pid 13458 (timeout)

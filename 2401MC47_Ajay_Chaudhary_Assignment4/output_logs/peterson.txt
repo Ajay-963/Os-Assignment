@@ -1,0 +1,30 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+peterson
+init: starting sh
+$ Peterson: process 0 in CS, counter = 1
+Peterson: process 1 in CS, counter = 2
+Peterson: process 0 in CS, counter = 3
+Peterson: process 1 in CS, counter = 4
+Peterson: process 0 in CS, counter = 5
+Peterson: process 1 in CS, counter = 6
+Peterson: process 0 in CS, counter = 7
+Peterson: process 1 in CS, counter = 8
+Peterson: process 0 in CS, counter = 9
+Peterson: process 1 in CS, counter = 10
+Peterson: process 0 in CS, counter = 11
+Peterson: process 1 in CS, counter = 12
+Peterson: process 1 in CS, counter = 13
+Peterson: process 0 in CS, counter = 14
+Peterson: process 0 in CS, counter = 15
+Peterson: process 1 in CS, counter = 16
+Peterson: process 0 in CS, counter = 17
+Peterson: process 1 in CS, counter = 18
+Peterson: process 1 in CS, counter = 19
+Peterson: process 0 in CS, counter = 20
+Peterson: final counter = 20 (expected 20)
+$ qemu-system-riscv64: terminating on signal 15 from pid 13144 (timeout)
