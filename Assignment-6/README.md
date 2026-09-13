@@ -51,7 +51,7 @@ The output in `Q1/Q1_output.txt` shows:
 ### Objective
 
 Detect deadlocks by constructing a wait-for graph from allocation and request
-matrices.
+matrices..
 
 ### Implementation
 
