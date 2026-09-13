@@ -169,19 +169,4 @@ Final result:
 - `Q4/Q4_output.txt`
 - `Q4/Q4_explanation.txt`
 
-## Synchronization Support Used
-
-The programs reuse the synchronization support already integrated into the xv6
-tree:
-
-- `fork()` and `wait()` for real process creation
-- `shm_get()` for shared process state
-- `sem_create()` for resource pools
-- `sem_wait()` for resource acquisition
-- `sem_post()` for resource release
-- `sem_destroy()` for cleanup
-
-The required user programs are included in the xv6 `Makefile` and compile as
-part of the xv6 filesystem image.
-
  
