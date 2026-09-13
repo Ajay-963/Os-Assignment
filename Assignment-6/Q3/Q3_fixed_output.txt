@@ -1,0 +1,23 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ resourceorder fixed
+[fixed] Process 0[ friexqeude]s Process 1 requesting Lock1
+[ftiixneg Ldo]c Pkr1o
+cess 1 acquired Lock1
+[fixed] Process 1 requesting Lock2
+[fixed] Process 1 acquired Lock2
+[fixed] Process 1 completed work
+[fixed] [Pfrioxceeds]s  P1 releaserdoc eLsosc k02  aacnd Locqku1
+ired Lock1
+[fixed] Process 0 requesting Lock2
+[fixed] Process 0 acquired Lock2
+[fixed] Process 0 completed work
+[fixed] Process 0 released Lock2 and Lock1
+[fixed] Both processes completed: YES
+$ qemu-system-riscv64: terminating on signal 15 from pid 4488 (timeout)
+host_timeout_status=124

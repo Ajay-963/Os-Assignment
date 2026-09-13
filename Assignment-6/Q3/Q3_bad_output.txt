@@ -1,0 +1,15 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ resourceorder bad
+[bad] Starting intentional circular wait; stop xv6 with Ctrl-A X or timeout
+[bad] Process A acquired Lock1
+[bad] Process B acquired Lock2
+[bad] Process A waiting for Lock2
+[bad] Process B waiting for Lock1
+qemu-system-riscv64: terminating on signal 15 from pid 4435 (timeout)
+host_timeout_status=124

@@ -1,0 +1,44 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 1 starting
+hart 2 starting
+init: starting sh
+$ bankers
+Banker's Algorithm Simulation
+Allocation:
+  P0: 0 1 0
+  P1: 2 0 0
+  P2: 3 0 2
+  P3: 2 1 1
+  P4: 0 0 2
+Max:
+  P0: 7 5 3
+  P1: 3 2 2
+  P2: 9 0 2
+  P3: 2 2 2
+  P4: 4 3 3
+Available: 3 3 2
+Need (Max - Allocation):
+  P0: 7 4 3
+  P1: 1 2 2
+  P2: 6 0 0
+  P3: 0 1 1
+  P4: 4 3 1
+Initial state: SAFE
+Safe sequence: P1 -> P3 -> P4 -> P0 -> P2
+
+Scenario 1 (safe request)
+Request from P1: 1 0 2
+Request granted; resulting state is safe
+Safe sequence after grant: P1 -> P3 -> P4 -> P0 -> P2
+Available after scenario 1: 2 3 0
+
+Scenario 2 (unsafe request)
+Request from P4: 2 3 0
+Request denied - would lead to unsafe state
+Temporary allocation rolled back
+Available after scenario 2: 2 3 0
+$ qemu-system-riscv64: terminating on signal 15 from pid 4329 (timeout)
+host_timeout_status=124

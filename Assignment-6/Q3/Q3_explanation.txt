@@ -1,0 +1,19 @@
+Question 3 explanation
+
+The bad mode creates two real xv6 children and two binary semaphores. Process A
+acquires Lock1 and then waits for Lock2. Process B acquires Lock2 and then waits
+for Lock1. The deliberate pauses make the circular wait reproducible: each
+process holds one resource while waiting for the resource held by the other.
+The parent therefore cannot reap both children, and the run intentionally hangs.
+
+The bad run is tested safely from the Linux host with timeout. The expected
+markers are both acquisitions followed by:
+
+  Process A waiting for Lock2
+  Process B waiting for Lock1
+
+The fixed mode makes both children acquire Lock1 before Lock2, perform their
+work, and release Lock2 before Lock1. This global resource order prevents a
+cycle because no process can hold the higher-numbered resource while waiting
+for the lower-numbered one. Both children therefore terminate and the parent
+prints that both processes completed.

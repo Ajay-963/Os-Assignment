@@ -1,0 +1,13 @@
+Question 4 explanation
+
+syncdeadlock creates five real xv6 children. Each worker repeatedly needs two of
+three resource types: Printer, Scanner, and Disk. The semaphore capacities are
+Printer=2, Scanner=1, and Disk=2, so the semaphore counts represent the
+limited shared resource instances.
+
+All workers acquire their two resources in the global order Printer < Scanner <
+Disk. They print request, grant, work, release, and completion markers for
+three cycles. The ordered acquisition rule prevents circular wait, while the
+kernel-backed semaphores ensure that no resource count becomes negative or
+exceeds its configured capacity. Shared memory records each worker's completed
+cycle count so the parent can verify that all five workers finish.
